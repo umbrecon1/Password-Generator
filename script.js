@@ -51,6 +51,9 @@ for (i = 0; i < length + 1; i++) {
   let randomCharIndex = Math.floor(Math.random() * possibleCharacters.length)
   generatedPassword += possibleCharacters[randomCharIndex]
 }
+// returns random password
+return generatedPassword;
+
 
 
 
