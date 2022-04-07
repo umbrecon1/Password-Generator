@@ -31,7 +31,7 @@ function generatePassword() {
 function getUserInput() {
   let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number 8 through 128!"))
 
-  if (number.isNaN(numberChars)) {
+  if (Number.isNaN(numberChars)) {
     alert("Must enter a number, silly!!")
     return;
   }
@@ -42,19 +42,18 @@ function getUserInput() {
     alert("You may not exceed 128 characters. Enter a valid number! ")
     return;
   }
-
+ // confirming which characters will be used
   let useLowercase = confirm("Would you like to use lowercase letters?");
   let useUppercase = confirm("Would you like to use uppercase letters?");
   let useSpecialChars = confirm("Would you like to use special characters?");
   let useNumbers = confirm("Would you like to use numbers?")
 
+// if no characters are selected then restart
+
   if (!useLowercase && !useUppercase && !useSpecialChars && !useNumbers) {
     alert("Please select at least 1 character type!")
     return;
   }
-
-
-
 
 //Object 
 
@@ -66,6 +65,7 @@ let optionObj = {
   numbers: useNumbers
 }
 return optionObj;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
