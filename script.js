@@ -21,14 +21,38 @@ function writePassword() {
 function generatePassword() {
   var selectedOptions = getUserInput() 
 
+
   }
 
   
+// Has user enter amounts needed for password and will be stored
+// Valid amounts will go through while invalid one will not
 
 function getUserInput() {
-  let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number between 8 and 128!"))
+  let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number 8 through 128!"))
 
-}
+  if (number.isNaN(numberChars)) {
+    alert("Must enter a number, silly!!")
+    return;
+  }
+  if (numberChars < 8) {
+    alert("You must include at least 8 characters. Enter a valid number!")
+    return;
+  } else if (numberChars > 128) {
+    alert("You may not exceed 128 characters. Enter a valid number! ")
+    return;
+  }
+
+  let useLowercase = confirm("Would you like to use lowercase letters?");
+  let useUppercase = confirm("Would you like to use uppercase letters?");
+  let useSpecialChars = confirm("Would you like to use special characters?");
+  let useNumbers = confirm("Would you like to use numbers?")
+
+  if (!useLowercase && !useUppercase && !useSpecialChars && !useNumbers) {
+    alert("Please select at least 1 character type!")
+    return;
+  }
+
 
 
 
