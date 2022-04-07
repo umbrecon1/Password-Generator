@@ -18,5 +18,30 @@ function writePassword() {
 
 }
 
+function generatePassword() {
+  var selectedOptions = getUserInput() 
+
+  }
+
+  
+
+function getUserInput() {
+  let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number between 8 and 128!"))
+
+}
+
+
+
+//Object 
+
+let optionObj = {
+  length: numberChars,
+  lowercase: useLowercase,
+  uppercase: useUppercase,
+  specialChars: useSpecialChars,
+  numbers: useNumbers
+}
+return optionObj;
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
