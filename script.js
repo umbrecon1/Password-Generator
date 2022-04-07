@@ -19,35 +19,67 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var selectedOptions = getUserInput() 
+  let selectedOptions = getUserInput()
+
+  if (selectedOptions === undefined) {
+    return;
+}
+
+// Puts selected options into an array to be generated into a random string
+let { length, lowercase, uppercase, specialChars, numbers } = selectedOptions ;
+let possibleCharacters = [];
+let generatedPassword = "";
+
+//if variables are selected, concat. use for password.
+
+if (lowercase) {
+  possibleCharacters = possibleCharacters.concat(lowerCharacters);
+}
+if (uppercase) {
+  possibleCharacters = possibleCharacters.concat(upperCharacters);
+}
+if (specialChars) {
+  possibleCharacters = possibleCharacters.concat(specialCharacters);
+}
+if (numbers) {
+  possibleCharacters = possibleCharacters.concat(numbers);
+}
+
+//use for loop for generation
+
+for (i = 0; i < length + 1; i++) {
+  let randomCharIndex = Math.floor(Math.random() * possibleCharacters.length)
+  generatedPassword += possibleCharacters[randomCharIndex]
+}
 
 
-  }
 
-  
 // Has user enter amounts needed for password and will be stored
 // Valid amounts will go through while invalid one will not
 
 function getUserInput() {
-  let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number 8 through 128!"))
+  let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number 8 through 128!"));
+// must enter a number
 
   if (Number.isNaN(numberChars)) {
     alert("Must enter a number, silly!!")
     return;
   }
+//must enter number that's at least 8
   if (numberChars < 8) {
     alert("You must include at least 8 characters. Enter a valid number!")
     return;
+
+//must enter number that's at most 128
   } else if (numberChars > 128) {
     alert("You may not exceed 128 characters. Enter a valid number! ")
     return;
   }
  // confirming which characters will be used
-  let useLowercase = confirm("Would you like to use lowercase letters?");
-  let useUppercase = confirm("Would you like to use uppercase letters?");
-  let useSpecialChars = confirm("Would you like to use special characters?");
+  let useLowercase = confirm("Would you like to use lowercase letters?")
+  let useUppercase = confirm("Would you like to use uppercase letters?")
+  let useSpecialChars = confirm("Would you like to use special characters?")
   let useNumbers = confirm("Would you like to use numbers?")
-
 // if no characters are selected then restart
 
   if (!useLowercase && !useUppercase && !useSpecialChars && !useNumbers) {
@@ -65,6 +97,7 @@ let optionObj = {
   numbers: useNumbers
 }
 return optionObj;
+}
 }
 
 // Add event listener to generate button
