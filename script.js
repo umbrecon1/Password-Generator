@@ -62,7 +62,7 @@ return generatedPassword;
 
 function getUserInput() {
   let numberChars = parseInt(prompt("How many characters would you like your password? \n Please choose a number 8 through 128!"));
-// must enter a number
+// must enter a numerical character, if not then return 
 
   if (Number.isNaN(numberChars)) {
     alert("Must enter a number, silly!!")
