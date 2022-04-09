@@ -1,11 +1,12 @@
 // Assignment Code
 
-//Characters
+//Characters 
+// const since they will never change
 
-var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
-var numericCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-var lowerCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var upperCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
+const numericCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+const lowerCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const upperCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 var generateBtn = document.querySelector("#generate");
 
@@ -25,7 +26,6 @@ function generatePassword() {
     return;
 }
 
-// Puts selected options into an array to be generated into a random string
 let { length, lowercase, uppercase, specialChars, numbers } = selectedOptions ;
 let possibleCharacters = [];
 let generatedPassword = "";
