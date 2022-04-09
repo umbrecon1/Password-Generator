@@ -18,7 +18,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+// Generates the password
 function generatePassword() {
   let selectedOptions = getUserInput()
 
@@ -30,7 +30,7 @@ let { length, lowercase, uppercase, specialChars, numbers } = selectedOptions ;
 let possibleCharacters = [];
 let generatedPassword = "";
 
-//if variables are selected, concat. use for password.
+//if variables are selected, concat to join. use for password.
 
 if (lowercase) {
   possibleCharacters = possibleCharacters.concat(lowerCharacters);
