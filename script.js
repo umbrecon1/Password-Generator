@@ -51,7 +51,7 @@ function generatePassword() {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
   }
   if (numbers) {
-    possibleCharacters = possibleCharacters.concat(numbers);
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
   }
   console.log(possibleCharacters);
 
